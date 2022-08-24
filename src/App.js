@@ -7,9 +7,13 @@ import './App.css';
 const App = () => {
   return (
     <>
-      <Header/>
-      <Main/>
-      <Footer/>
+      <div className='mainContainer'>
+        <Header/>
+        <div className='bodyContainer'>
+          <Main test="Videojuegos  y consolas de todo tipo" fecha={24}/>
+          <Footer/>
+        </div>
+      </div>
     </>
   )
 }
