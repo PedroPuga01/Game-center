@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './navbar.module.css'
 
@@ -49,7 +49,7 @@ function TopNavbar() {
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-                <button className="iniciarSesion">Iniciar Sesion</button>
+                <Button value='Sign In' variant='primary'/>
                 <span className="material-icons">Carrito</span>
                 <AiOutlineShoppingCart size={30} color="black" />
             </Navbar>

@@ -1,7 +1,7 @@
 import './button.module.css'
 
-const Button = ({value}) =>{
-    return <button>{value}</button>
+const Button = ({value, variant}) =>{
+    return <button className={[value]}>{value}</button>;
 }
 
 export default Button

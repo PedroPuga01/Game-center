@@ -9,7 +9,7 @@ const Main = (props) => {
         <section>
           <h2>Bienvenidos! {props.test}</h2>
           <p>Hoy es {props.fecha} de Agosto</p>
-          <Button value="Log out" />
+          <Button value="Log out" variant='secondary' />
         </section>
       </main>
   );
