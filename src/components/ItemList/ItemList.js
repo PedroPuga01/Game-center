@@ -1,14 +1,15 @@
 import React from 'react'
+import { Card } from '../Card/Card'
+import './ItemList.css'
 
-const ItemList = ({ items}) => {
+export const ItemList = ({productList}) => {
+
   return (
-    <div className={styles.containerCard}>
-      {items.map((item) => {
-        return <Item key={item.id} item={item} />;
-      })}
+    <div className='mainContainer-ItemList'>
+      {
+        productList.map(item => <Card key={item.id} img={item.img} title={item.title} stock={item.stock} price={item.price} />)
+      }
     </div>
+
   )
 }
-
-export default ItemList;
-

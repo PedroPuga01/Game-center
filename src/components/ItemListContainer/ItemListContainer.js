@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { ItemList } from '../ItemList/ItemList'
 import { products } from '../mock/products'
 
 const ItemListContainer = () => {
@@ -10,12 +11,12 @@ const ItemListContainer = () => {
 
     useEffect(() =>{
         getProducts()
+        .then(products => setProductList(products))
+        .catch(error => console.error(error))
     }, [])
-
-    console.log(productList)
-
+    
   return (
-    <div></div>
+    <ItemList productList={productList} />
   )
 }
 
