@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-const ItemCount = (props) => {
-    const [count, setCount] = useState(0)
-
+const Counter = (props) => {
     let stock = props.stock
     let initial = props.initial
+    let onAdd = props.onAdd
+    const [count, setCount] = useState(initial)
 
     const sumar = () =>{
       count < stock && setCount(count + 1)
@@ -19,9 +19,9 @@ const ItemCount = (props) => {
         <button onClick={sumar}>+</button>
         <button onClick={restar}>-</button>
         <p>Count: {count}</p>
-        <button disabled={count === 0}>Agregar al carrito</button>
+        <button onClick={onAdd} disabled={count === 0}>Agregar al carrito</button>
     </div>
   )
 }
 
-export default ItemCount
+export default Counter

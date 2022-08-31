@@ -1,17 +1,13 @@
 import React from 'react'
-import Button from '../Button/Button';
+import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import styles from './main.module.css'
 
 const Main = (props) => {
   console.log(props.test);
   return (
     <main className={styles.mainContainer}>
-        <section>
-          <h2>Bienvenidos! {props.test}</h2>
-          <p>Hoy es {props.fecha} de Agosto</p>
-          <Button value="Log out" variant='secondary' />
-        </section>
-      </main>
+      <ItemListContainer saludo='Bienvenidos'/>
+    </main>
   );
 };
 

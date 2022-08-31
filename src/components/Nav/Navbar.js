@@ -49,7 +49,6 @@ function TopNavbar() {
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-                <Button value='Sign In' variant='primary'/>
                 <span className="material-icons">Carrito</span>
                 <AiOutlineShoppingCart size={30} color="black" />
             </Navbar>
