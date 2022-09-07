@@ -10,7 +10,7 @@ const ItemListContainer = () => {
     const {categoryName} = useParams()
 
     const getProducts = () => new Promise((res,rej) => {
-        setTimeout(()=> res(products), 2000)
+        setTimeout(()=> res(products), 1000)
     })
 
     useEffect(() =>{

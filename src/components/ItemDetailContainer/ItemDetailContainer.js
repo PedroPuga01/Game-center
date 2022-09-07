@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
     },[id]);
 
   const productFilter = products.find((product) => {
-    return product.id == id;
+    return product.id === id;
   });
 
   return (

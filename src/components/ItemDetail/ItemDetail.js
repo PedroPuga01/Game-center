@@ -1,6 +1,10 @@
 import React from 'react'
+import Counter from '../Counter/Counter'
 
 const ItemDetail = ({data}) => {
+    const onAdd = () =>{
+        console.log("Agregaste elementos al carrito")
+      }
   return (
     <div className="container">
         <div className="card">
@@ -19,6 +23,7 @@ const ItemDetail = ({data}) => {
                                 <li><i className="fa fa-check text-success product-details"></i>{data.description}</li>
                                 </ul>
                             <h4>Stock disponible: {data.stock}</h4>
+                            <Counter stock={10} initial={0} onAdd={onAdd}/>
                         </div>
                             <h2 className="mt-5">
                             ${data.price}<small className="text-success">(36%off)</small>

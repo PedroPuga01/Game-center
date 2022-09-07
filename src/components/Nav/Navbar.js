@@ -7,28 +7,37 @@ import {Link} from 'react-router-dom'
 
 function TopNavbar() {
     return (
-        <div className='mainContainer'>
-            <Navbar bg="light" expand="lg">
-                <Container>
-                    <Navbar.Brand href="#home">GamerLife</Navbar.Brand>
-                        <Link to="/">Home</Link>
-                        <Link to="/category/Ayuda">Ayuda</Link>
-                        <Link to="/category/PlayStation">PlayStation</Link>
-                        <Link to="/category/Nintendo">Nintendo</Link>
-                        <Link to="/category/Xbox">Xbox</Link>
-                        <NavDropdown title="Periféricos" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Auriculares</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Mouse</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.1">Teclado</NavDropdown.Item>
-                        </NavDropdown>      
-                </Container>
-                <Link to='/cart'><CartWidget />
-                    <AiOutlineShoppingCart size={30} color="black" />
-                </Link>
-                
-            </Navbar>
-            
-        </div>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">GamerLife</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <Link className="nav-link" to='/Productos/PlayStation'>PlayStation</Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link className="nav-link" to='/Productos/Nintendo'>Nintendo</Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link className="nav-link" to='/Productos/Xbox'>Xbox</Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link className="nav-link" to='/Productos/Perifericos'>Perifericos</Link>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>    
     );
 }
 
