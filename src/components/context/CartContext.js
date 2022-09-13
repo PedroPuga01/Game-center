@@ -12,14 +12,26 @@ export const CartProvider = ({children}) => {
     }, [cart])
 
     const addToCart = (item, qty) => {
-        setCart([...cart,{...item,qty} ])
-
+        if (isInCart(item.id)) {
+            addQty(item, qty)
+        } else {
+            setCart([...cart, { ...item, qty }])
+            
+        }
     }
+    
+    //Si el producto está en el carrito
     const isInCart = (id) => {
-        return cart.some(prod => prod.id === id)
-        
-
+        return cart.some((prod) => prod.id === id)
     }
+
+    //Agregar cantidad
+    const addQty = (item, qty) => {
+        const updateCart = cart.map((prod) =>
+        prod.id === item.id ? { ...prod, qty: prod.qty + qty } : prod)
+        setCart(updateCart)
+    }
+
     const totalCartPrice = () => {
         return cart.reduce((acc, item) => ( acc + (item.quantity * item.price) ), 0);
     }
