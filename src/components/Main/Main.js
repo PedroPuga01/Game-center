@@ -9,7 +9,6 @@ import Playstation from '../paginas/PlayStation'
 import Xbox from '../paginas/Xbox'
 import Perifericos from '../paginas/Perifericos'
 
-
 const Main = () => {
   return (
     <main className={styles.mainContainer}>

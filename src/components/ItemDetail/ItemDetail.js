@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState, useContext  } from 'react'
 import Counter from '../Counter/Counter'
+import CartContext from '../context/CartContext'
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({data}) => {
-    const onAdd = () =>{
-        console.log("Agregaste elementos al carrito")
-      }
+    const {  addToCart, isInCart, deleteItem  } = useContext(CartContext)
+    
+    const sendItemToCart = (qty) => {
+        addToCart({...data, cantidad: qty})
+    }
+    
+    const [cantidad, setCantidad] = useState(0)
+    const [showButton, setShowButton] = useState(false)
+    
+    const addProductToCart = () => {
+        console.log("PRODUCTO A AGREGAR: ", data)
+        console.log("CANTIDAD:", cantidad)
+    }
+    
   return (
     <div className="container">
         <div className="card">
@@ -23,11 +36,13 @@ const ItemDetail = ({data}) => {
                                 <li><i className="fa fa-check text-success product-details"></i>{data.description}</li>
                                 </ul>
                             <h4>Stock disponible: {data.stock}</h4>
-                            <Counter stock={10} initial={0} onAdd={onAdd}/>
+                            <Counter stock={10} initial={0} />
+                            <Link to="/cart">Ir al carrito</Link>
                         </div>
                             <h2 className="mt-5">
                             ${data.price}<small className="text-success">(36%off)</small>
                             </h2>
+                            {isInCart(data.id) ? <button onClick={() => {deleteItem(data.id)}}> Modificar Compra </button> : <Counter cantidad={cantidad} stock={data.stock} setCantidad={setCantidad} onAdd={sendItemToCart}/>}
                     </div>
                 </div>
             </div>

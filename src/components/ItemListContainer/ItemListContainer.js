@@ -22,7 +22,7 @@ const ItemListContainer = () => {
         .catch(error => console.error(error))
       }
         
-    }, [])
+    }, [categoryName])
     
   return (
     <ItemList productList={productList} />
