@@ -4,10 +4,16 @@ import CartContext from '../context/CartContext'
 import { Link } from 'react-router-dom';
 
 const ItemDetail = ({data}) => {
+
     const [cantidad, setCantidad] = useState(0)
-    const onAdd = (arg) => {
-        setCantidad(arg);
-    };
+
+    const {  addToCart, isInCart, deleteItem  } = useContext(CartContext)
+
+    const onAdd = (cantidadItem) => {
+        setCantidad(cantidadItem);
+        addToCart(data, cantidadItem)
+    }
+
     const [showButton, setShowButton] = useState(false)
     
     const addProductToCart = () => {
@@ -58,10 +64,9 @@ export default ItemDetail
 
 
 
-// CartContext 
 
-// const {  addToCart, isInCart, deleteItem  } = useContext(CartContext)
-    
+// context
+
 // const sendItemToCart = (qty) => {
 //     addToCart({...data, cantidad: qty})
 // }
