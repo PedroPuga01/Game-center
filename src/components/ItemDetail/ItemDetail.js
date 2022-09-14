@@ -4,9 +4,10 @@ import CartContext from '../context/CartContext'
 import { Link } from 'react-router-dom';
 
 const ItemDetail = ({data}) => {
-   
-    
     const [cantidad, setCantidad] = useState(0)
+    const onAdd = (arg) => {
+        setCantidad(arg);
+    };
     const [showButton, setShowButton] = useState(false)
     
     const addProductToCart = () => {
@@ -32,12 +33,17 @@ const ItemDetail = ({data}) => {
                                 <li><i className="fa fa-check text-success product-details"></i>{data.description}</li>
                                 </ul>
                             <h4>Stock disponible: {data.stock}</h4>
-                            <Counter stock={10} initial={0} />
-                            <Link to="/cart">Ir al carrito</Link>
+                            
                         </div>
                             <h2 className="mt-5">
-                            ${data.price}<small className="text-success">(36%off)</small>
+                                ${data.price}<small className="text-success">(36%off)</small>
                             </h2>
+                            {cantidad === 0 ? (
+                                <Counter stock={data.stock} initial={0} onAdd={onAdd} />
+                            ) : (
+                                <Link to="/cart">Ir al carrito</Link>
+                            )}
+                            
                             
                     </div>
                 </div>
@@ -52,7 +58,7 @@ export default ItemDetail
 
 
 
-// CartContext (rompe el detail)
+// CartContext 
 
 // const {  addToCart, isInCart, deleteItem  } = useContext(CartContext)
     

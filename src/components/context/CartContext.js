@@ -31,7 +31,7 @@ export const CartProvider = ({children}) => {
         prod.id === item.id ? { ...prod, qty: prod.qty + qty } : prod)
         setCart(updateCart)
     }
-
+    
     const totalCartPrice = () => {
         return cart.reduce((acc, item) => ( acc + (item.quantity * item.price) ), 0);
     }
