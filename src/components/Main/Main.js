@@ -8,6 +8,8 @@ import Nintendo from '../paginas/Nintendo';
 import Playstation from '../paginas/PlayStation'
 import Xbox from '../paginas/Xbox'
 import Perifericos from '../paginas/Perifericos'
+import CartPage from '../paginas/CartPage';
+
 
 const Main = () => {
   return (
@@ -16,7 +18,7 @@ const Main = () => {
         <Route path='/' element={<ItemListContainer/>}/>
         <Route path='/category/:categoryName' element={<ItemListContainer/>}/>
         <Route path='/product/:id' element={<ItemDetailContainer /> }/>
-        <Route path='/cart' element={<Cart/> }/>
+        <Route path='/product/cart' element={<CartPage/> }/>
         <Route path='/Productos/Nintendo' element={<Nintendo/> }/>
         <Route path='/Productos/Playstation' element={<Playstation/> }/>
         <Route path='/Productos/Xbox' element={<Xbox/> }/>

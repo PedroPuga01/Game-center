@@ -1,5 +1,7 @@
 import React from 'react'
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import CartWidget from './CartWidget';
 import './navbar.module.css'
 import {Link} from 'react-router-dom'
 
@@ -29,7 +31,6 @@ function TopNavbar() {
                             <Link className="nav-link" to='/Productos/Perifericos'>Perifericos</Link>
                         </li>
                     </ul>
-                    <AiOutlineShoppingCart />
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
                         <button class="btn btn-outline-success" type="submit">Search</button>

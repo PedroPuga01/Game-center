@@ -1,26 +1,27 @@
-import React, { useState, useContext  } from 'react'
+import React, { useState, useContext } from 'react'
 import Counter from '../Counter/Counter'
-import CartContext from '../context/CartContext'
-import { Link } from 'react-router-dom';
+import CartContext from '../CartContext/CarContext'
+import { Link } from 'react-router-dom'
 
-const ItemDetail = ({data}) => {
-
-    const [cantidad, setCantidad] = useState(0)
+const ItemDetail = ({data}) =>  {
+    const onAdd = (cantidadItem) => {
+        setCantidad(cantidadItem);
+        addToCart(data, cantidadItem);
+    };
 
     const {  addToCart, isInCart, deleteItem  } = useContext(CartContext)
 
-    const onAdd = (cantidadItem) => {
-        setCantidad(cantidadItem);
-        addToCart(data, cantidadItem)
+    const sendItemToCart = (qty) => {
+        addToCart({...data, cantidad: qty})
     }
 
+    const [cantidad, setCantidad] = useState(0)
     const [showButton, setShowButton] = useState(false)
-    
+
     const addProductToCart = () => {
         console.log("PRODUCTO A AGREGAR: ", data)
         console.log("CANTIDAD:", cantidad)
     }
-    
   return (
     <div className="container">
         <div className="card">
@@ -39,18 +40,16 @@ const ItemDetail = ({data}) => {
                                 <li><i className="fa fa-check text-success product-details"></i>{data.description}</li>
                                 </ul>
                             <h4>Stock disponible: {data.stock}</h4>
-                            
                         </div>
                             <h2 className="mt-5">
-                                ${data.price}<small className="text-success">(36%off)</small>
+                             ${data.price}<small className="text-success">(36%off)</small>
                             </h2>
                             {cantidad === 0 ? (
-                                <Counter stock={data.stock} initial={0} onAdd={onAdd} />
+                                <Counter stock={data.stock} initial={1} onAdd={onAdd} />
                             ) : (
-                                <Link to="/cart">Ir al carrito</Link>
+                                <Link to="/product/cart">Ir al carrito</Link>
                             )}
-                            
-                            
+                         
                     </div>
                 </div>
             </div>
@@ -60,15 +59,3 @@ const ItemDetail = ({data}) => {
 }
 
 export default ItemDetail
-
-
-
-
-
-// context
-
-// const sendItemToCart = (qty) => {
-//     addToCart({...data, cantidad: qty})
-// }
-
-// <button onClick={() => {deleteItem(data.id)}}> Modificar Compra </button> : <Counter cantidad={cantidad} stock={data.stock} setCantidad={setCantidad} onAdd={sendItemToCart}/>
