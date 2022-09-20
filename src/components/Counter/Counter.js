@@ -1,27 +1,55 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const Counter = (props) => {
-    let stock = props.stock
-    let initial = props.initial
-    let onAdd = props.onAdd
-    const [count, setCount] = useState(initial)
+const Counter = ({
+  cantidad,
+  setCantidad,
+  onAdd,
+  stock,
+  price,
+}) => {
 
-    const sumar = () =>{
-      count < stock && setCount(count + 1)
+  const total = []
+  const addTotal = () => {
+    total.push(price)
+    console.log(total)
+  }
+  const addProduct = () => {
+    if (cantidad >= stock) {
+      Error('No hay mas stock disponible!');
+    } else {
+      setCantidad(cantidad + 1);
     }
-
-    const restar = () =>{
-      count > initial && setCount(count - 1)
-    };
-
+  };
+  const removeProduct = () => {
+    if (cantidad <= 1) {
+      Error('Digito Invalido');
+    } else {
+      setCantidad(cantidad - 1);
+    }
+  };
   return (
-    <div>
-        <button onClick={sumar}>+</button>
-        <button onClick={restar}>-</button>
-        <p>Count: {count}</p>
-        <button onClick={onAdd} disabled={count === 0}>Agregar al carrito</button>
-    </div>
-  )
-}
+    <>
+      <div
+        style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}
+      >
+        <button onClick={addProduct}>+</button>
+        <p>{cantidad}</p>
+        <button onClick={removeProduct}>-</button>
+      </div>
+      <button
+        onClick={() => {
+          onAdd(cantidad);
+          addTotal();
+        }}
+      >
+        {' '}
+        AGREGAR PRODUCTO{' '}
+      </button>
+    </>
+  );
+};
 
-export default Counter
+export default Counter;
+
+
+// const [count, setCount] = useState(initial)

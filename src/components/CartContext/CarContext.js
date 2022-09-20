@@ -19,7 +19,7 @@ export const CartProvider = ({children}) => {
         return cart.some(prod => prod.id === id)
     }
     const totalCartPrice = () => {
-        return cart.reduce((acc, item) => ( acc + (item.quantity * item.price) ), 0);
+        return cart.reduce((acc, item) => ( acc + (item.cantidad * item.price) ), 0);
     }
 
     // const totalUnidades = () => {

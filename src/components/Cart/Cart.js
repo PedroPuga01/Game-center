@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './cart.css';
 import CartContext from '../CartContext/CarContext';
 
-const Cart = ({ title, price, img, description, count, id }) => {
+const Cart = ({ title, price, img, description, cantidad, id }) => {
   const { deleteItem, cart, clearCart } = useContext(CartContext);
 
   return (
@@ -27,11 +27,11 @@ const Cart = ({ title, price, img, description, count, id }) => {
                       </div>
                       <div className="cart_item_quantity cart_info_col">
                         <div className="cart_item_title">Cantidad</div>
-                        <div className="cart_item_text">{count}</div>
+                        <div className="cart_item_text">{cantidad}</div>
                       </div>
                       <div className="cart_item_price cart_info_col">
                         <div className="cart_item_title">Precio</div>
-                        <div className="cart_item_text">{price * count}</div>
+                        <div className="cart_item_text">{price * cantidad}</div>
                       </div>
                       <div className="cart_item_total cart_info_col"></div>
                     </div>

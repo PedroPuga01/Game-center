@@ -44,6 +44,8 @@ const ItemDetail = ({data}) =>  {
                             <h2 className="mt-5">
                              ${data.price}<small className="text-success">(36%off)</small>
                             </h2>
+                            {isInCart(data.id) ? <button onClick={() => {deleteItem(data.id)}}> Modificar Compra </button> : <Counter cantidad={cantidad} stock={data.stock} setCantidad={setCantidad} onAdd={sendItemToCart}/>}
+                            <br />
                             {cantidad === 0 ? (
                                 <Counter stock={data.stock} initial={1} onAdd={onAdd} />
                             ) : (
