@@ -1,5 +1,11 @@
-const CartWidget = () =>{
-    <span className="material-icons">Carrito</span>
-}
+import React from 'react';
 
-export default CartWidget
+const CartWidget = () => {
+    return (
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+            <span className="material-icons">shopping_cart</span>
+        </div>
+    );
+};
+
+export default CartWidget;

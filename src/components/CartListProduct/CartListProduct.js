@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Cart from '../Cart/Cart';
 import { Link } from 'react-router-dom';
-import CarContext from '../CartContext/CarContext';
+import CartContext from '../CartContext/CarContext';
 
 const CartListProduct = ({ cart, quantity }) => {
   /* const suma = (a, b) => {
@@ -12,8 +12,8 @@ const CartListProduct = ({ cart, quantity }) => {
     return suma(cart[i].price, acumulador);
   }*/
 
-  const {totalCartPrice} = useContext(CarContext)
-
+  const {totalCartPrice} = useContext(CartContext)
+  const { clearCart } = useContext(CartContext);
 
   return (
     <div>
@@ -41,8 +41,10 @@ const CartListProduct = ({ cart, quantity }) => {
           <button type="button" className="button cart_button_clear">
             Seguir Comprando
           </button>
+          <button  type="button" onClick={clearCart}>Clear Cart </button>
         </div>
       </Link>
+      <p>Total: ${totalCartPrice(cart)} </p>
     </div>
   );
 };

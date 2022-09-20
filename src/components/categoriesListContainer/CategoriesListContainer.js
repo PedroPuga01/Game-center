@@ -1,5 +1,5 @@
 import React from 'react';
-import { Item } from '../Item/Item';
+import Item from '../Item/Item';
 
 const CategoriesListContainer = ({ categorie, productos }) => {
   const filtro = productos.filter((producto) => producto.category === categorie);

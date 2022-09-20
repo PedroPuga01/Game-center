@@ -17,12 +17,24 @@ export const CartProvider = ({children}) => {
     }
     const isInCart = (id) => {
         return cart.some(prod => prod.id === id)
-        
-
     }
     const totalCartPrice = () => {
         return cart.reduce((acc, item) => ( acc + (item.quantity * item.price) ), 0);
     }
+
+    // const totalUnidades = () => {
+    //     let contador = 0;
+    //     cart.forEach((prod) => {
+    //         contador += prod.cantidad;
+    //     })
+    //     return contador
+    // }
+
+    // const getTotalUnidades = (id) => {
+    //     const product = cart.find((prod) =>{
+    //         return product?.cantidad;
+    //     })
+    // }
 
     const deleteItem = (id) => {
         const auxCart = cart.filter(prod => prod.id !== id)

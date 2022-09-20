@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import './cart.css';
 import CartContext from '../CartContext/CarContext';
 
-const Cart = ({ title, price, img, description, cantidad, id }) => {
-  const { deleteItem, totalCartPrice, cart } = useContext(CartContext);
+const Cart = ({ title, price, img, description, count, id }) => {
+  const { deleteItem, totalCartPrice, cart, clearCart } = useContext(CartContext);
 
   return (
     <div className="cart_section">
@@ -15,7 +15,7 @@ const Cart = ({ title, price, img, description, cantidad, id }) => {
                 <ul className="cart_list">
                   <li className="cart_item clearfix">
                     <div className="cart_item_image">
-                      <img src={`../${img}`} alt="" />
+                      <img src={`${img}`} alt="" />
                     </div>
                     <div className="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                       <div className="cart_item_name cart_info_col">
@@ -27,11 +27,11 @@ const Cart = ({ title, price, img, description, cantidad, id }) => {
                       </div>
                       <div className="cart_item_quantity cart_info_col">
                         <div className="cart_item_title">Cantidad</div>
-                        <div className="cart_item_text">{cantidad}</div>
+                        <div className="cart_item_text">{count}</div>
                       </div>
                       <div className="cart_item_price cart_info_col">
                         <div className="cart_item_title">Precio</div>
-                        <div className="cart_item_text">{price * cantidad}</div>
+                        <div className="cart_item_text">{price * count}</div>
                       </div>
                       <div className="cart_item_total cart_info_col"></div>
                     </div>
