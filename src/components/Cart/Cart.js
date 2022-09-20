@@ -3,7 +3,7 @@ import './cart.css';
 import CartContext from '../CartContext/CarContext';
 
 const Cart = ({ title, price, img, description, count, id }) => {
-  const { deleteItem, totalCartPrice, cart, clearCart } = useContext(CartContext);
+  const { deleteItem, cart, clearCart } = useContext(CartContext);
 
   return (
     <div className="cart_section">

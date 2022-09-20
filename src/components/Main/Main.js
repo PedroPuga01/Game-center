@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
-import Cart from '../Cart/Cart';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import styles from './main.module.css'
@@ -9,6 +8,7 @@ import Playstation from '../paginas/PlayStation'
 import Xbox from '../paginas/Xbox'
 import Perifericos from '../paginas/Perifericos'
 import CartPage from '../paginas/CartPage';
+import Cart from '../Cart/Cart'
 
 
 const Main = () => {
@@ -23,6 +23,7 @@ const Main = () => {
         <Route path='/Productos/Playstation' element={<Playstation/> }/>
         <Route path='/Productos/Xbox' element={<Xbox/> }/>
         <Route path='/Productos/Perifericos' element={<Perifericos/> }/>
+        <Route path='/cart' element={<Cart /> }/>
       </Routes>
     </main>
   );
