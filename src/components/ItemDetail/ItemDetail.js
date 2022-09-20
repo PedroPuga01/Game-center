@@ -45,12 +45,7 @@ const ItemDetail = ({data}) =>  {
                              ${data.price}<small className="text-success">(36%off)</small>
                             </h2>
                             {isInCart(data.id) ? <button onClick={() => {deleteItem(data.id)}}> Modificar Compra </button> : <Counter cantidad={cantidad} stock={data.stock} setCantidad={setCantidad} onAdd={sendItemToCart}/>}
-                            <br />
-                            {cantidad === 0 ? (
-                                <Counter stock={data.stock} initial={1} onAdd={onAdd} />
-                            ) : (
-                                <Link to="/product/cart">Ir al carrito</Link>
-                            )}
+                            <button><Link to="/product/cart">Ir al carrito</Link></button>
                          
                     </div>
                 </div>
