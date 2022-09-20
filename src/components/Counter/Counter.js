@@ -50,6 +50,3 @@ const Counter = ({
 };
 
 export default Counter;
-
-
-// const [count, setCount] = useState(initial)
