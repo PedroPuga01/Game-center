@@ -4,6 +4,7 @@ import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import styles from './main.module.css'
 import Cart from '../Cart/Cart'
+import CartPage from '../paginas/CartPage'
 
 
 const Main = () => {
@@ -12,7 +13,8 @@ const Main = () => {
       <Routes>
         <Route path='/' element={<ItemListContainer/>}/>
         <Route path='/category/:categoryName' element={<ItemListContainer/>}/>
-        <Route path='/detail/:idProducto' element={<ItemDetailContainer /> }/>
+        <Route path='/product/:id' element={<ItemDetailContainer /> }/>
+        <Route path='/product/cart' element={<CartPage /> }/>
         <Route path='/cart' element={<Cart /> }/>
       </Routes>
     </main>
