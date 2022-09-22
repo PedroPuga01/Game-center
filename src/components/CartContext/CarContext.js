@@ -4,6 +4,7 @@ import { createContext, useState, useEffect } from 'react'
 const CarContext = createContext()
 
 export const CartProvider = ({children}) => {
+    const [unidades,setUnidades] = useState(0)
     const [cart, setCart] =useState([])
 
     useEffect(() => {
@@ -13,22 +14,19 @@ export const CartProvider = ({children}) => {
 
     const addToCart = (item) => {
         setCart([...cart, item])
-
     }
+    
+    cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity,0);
     const isInCart = (id) => {
         return cart.some(prod => prod.id === id)
     }
+    
     const totalCartPrice = () => {
         return cart.reduce((acc, item) => ( acc + (item.cantidad * item.price) ), 0);
     }
 
-    // const totalUnidades = () => {
-    //     let contador = 0;
-    //     cart.forEach((prod) => {
-    //         contador += prod.cantidad;
-    //     })
-    //     return contador
-    // }
+    const totalProducts = () =>
+    cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity,0);
 
     // const getTotalUnidades = (id) => {
     //     const product = cart.find((prod) =>{
@@ -42,6 +40,11 @@ export const CartProvider = ({children}) => {
 
     }
 
+    // const getProductQuantity = (id) => {
+    //     const product = cart.find((prod) => prod.id === id);
+    //     return product?.cantidad
+    // }
+
     const clearCart = () => setCart([])
 
     const values = {
@@ -50,7 +53,8 @@ export const CartProvider = ({children}) => {
         isInCart,
         deleteItem,
         clearCart,
-        totalCartPrice
+        totalCartPrice,
+        totalProducts,
     }
   return (
     <CarContext.Provider value={values}>{children}</CarContext.Provider>

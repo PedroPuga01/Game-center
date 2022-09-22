@@ -1,4 +1,5 @@
 import React from 'react';
+import CarContext from '../CartContext/CarContext';
 
 const CartWidget = () => {
     return (
