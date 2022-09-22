@@ -4,7 +4,6 @@ import { createContext, useState, useEffect } from 'react'
 const CarContext = createContext()
 
 export const CartProvider = ({children}) => {
-    const [unidades,setUnidades] = useState(0)
     const [cart, setCart] =useState([])
 
     useEffect(() => {

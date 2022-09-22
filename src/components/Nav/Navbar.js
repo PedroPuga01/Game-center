@@ -17,19 +17,19 @@ function TopNavbar() {
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <Link className="nav-link" to='/Productos/PlayStation'>PlayStation</Link>
+                            <Link className="nav-link" to='/category/playstation'>PlayStation</Link>
                         </li>
                         <li class="nav-item">
-                            <Link className="nav-link" to='/Productos/Nintendo'>Nintendo</Link>
+                            <Link className="nav-link" to='/category/nintendo'>Nintendo</Link>
                         </li>
                         <li class="nav-item">
-                            <Link className="nav-link" to='/Productos/Xbox'>Xbox</Link>
+                            <Link className="nav-link" to='/category/xbox'>Xbox</Link>
                         </li>
                         <li class="nav-item">
-                            <Link className="nav-link" to='/Productos/Perifericos'>Perifericos</Link>
+                            <Link className="nav-link" to='/category/perifericos'>Perifericos</Link>
                         </li>
                     </ul>
-                    <Link to="/product/cart">
+                    <Link to="/cart">
                         <CartWidget/>
                     </Link>
                     {/* <form class="d-flex" role="search">

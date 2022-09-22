@@ -1,8 +1,8 @@
 import React from 'react';
 import Item from '../Item/Item';
 
-const CategoriesListContainer = ({ categorie, productos }) => {
-  const filtro = productos.filter((producto) => producto.category === categorie);
+const CategoriesListContainer = ({ category, productos }) => {
+  const filtro = productos.filter((producto) => producto.category === category);
   console.log(filtro[0].img);
 
   return (

@@ -5,7 +5,7 @@ import CategoriesListContainer from '../categoriesListContainer/CategoriesListCo
 const Perifericos = () => {
   return (
   <div>
-    <CategoriesListContainer categorie={'perifericos'} productos={products}/>
+    <CategoriesListContainer category={'perifericos'} productos={products}/>
   </div>
   )
 };

@@ -23,7 +23,7 @@ const ItemDetail = ({data}) =>  {
         console.log("CANTIDAD:", cantidad)
     }
   return (
-    <div className="container">
+    <div className="container" key={data.id}>
         <div className="card">
             <div className="card-body">
                 <div className='cardText'>

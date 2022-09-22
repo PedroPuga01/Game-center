@@ -9,7 +9,7 @@ import {db} from '../../firebaseConfig'
 const ItemListContainer = () => {
   const [productList, setProductList] = useState([]);
   const { categoryName } = useParams()
-
+  console.log(categoryName)
   useEffect(() => {
     const itemCollection = collection(db, "ItemCollection");
     if (categoryName) {

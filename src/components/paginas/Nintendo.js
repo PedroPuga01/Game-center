@@ -5,7 +5,7 @@ import CategoriesListContainer from '../categoriesListContainer/CategoriesListCo
 const Nintendo = () => {
   return (
   <div>
-    <CategoriesListContainer categorie={'nintendo'} productos={products}/>
+    <CategoriesListContainer category={'nintendo'} productos={products}/>
   </div>
   )
 };
