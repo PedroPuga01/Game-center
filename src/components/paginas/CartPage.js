@@ -1,11 +1,10 @@
 import React, {useContext} from 'react'
-import CarContext from '../CartContext/CarContext'
+import CartContext from '../CartContext/CartContext'
 import CartListProduct from '../CartListProduct/CartListProduct'
 
 const CartPage = () => {
 
-    const {cart} = useContext(CarContext)
-    console.log(cart)
+    const {cart} = useContext(CartContext)
     return(
         <div>
             <CartListProduct cart={cart} quantity={cart.length}/>

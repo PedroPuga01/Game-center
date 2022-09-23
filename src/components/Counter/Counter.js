@@ -11,7 +11,6 @@ const Counter = ({
   const total = []
   const addTotal = () => {
     total.push(price)
-    console.log(total)
   }
   const addProduct = () => {
     if (cantidad >= stock) {

@@ -9,7 +9,6 @@ import {db} from '../../firebaseConfig'
 const ItemListContainer = () => {
   const [productList, setProductList] = useState([]);
   const { categoryName } = useParams()
-  console.log(categoryName)
   useEffect(() => {
     const itemCollection = collection(db, "ItemCollection");
     if (categoryName) {
@@ -35,25 +34,3 @@ const ItemListContainer = () => {
 
 export default ItemListContainer
 
-
-
-
-    // const getProducts = () => new Promise((res,rej) => {
-    //     setTimeout(()=> res(products), 1000)
-    // })
-
-    // useEffect(() =>{
-    //   if (categoryName) {
-    //     //filtramos
-    //   } else {
-    //     getProducts()
-    //     .then(products => setProductList(products))
-    //     .catch(error => console.error(error))
-    //   }
-        
-    // }, [])
-
-
-    // .catch((error)=> {
-    //   console.log(error)
-    // })
