@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail';
-// import products from '../mock/products';
 import {db} from '../../firebaseConfig'
 import {getDoc, doc, collection} from 'firebase/firestore'
 
@@ -29,10 +28,3 @@ export default ItemDetailContainer
 
 
 
-// console.log('productFilter: ', productFilter) 
-//       setProduct(productFilter);
-
-
-// const productFilter = products.find((product) => {
-//   return product.id === id;
-// });

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import CartContext from '../CartContext/CartContext';
 
 const CartListProduct =  () => {
-  const { totalCartPrice, totalProducts, cart, clearCart } = useContext(CartContext);
+  const { totalCartPrice, cart, clearCart } = useContext(CartContext);
   return (
     <div>
       {cart.map((prod) =><Cart prod={prod}/>)}   
@@ -25,11 +25,3 @@ const CartListProduct =  () => {
 export default CartListProduct;
 
 
-
-  /* const suma = (a, b) => {
-    return a + b;
-  };
-  const acumulador = 0;
-  for (let i = 0; i <= cart.length; i++) {
-    return suma(cart[i].price, acumulador);
-  }*/

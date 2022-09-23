@@ -18,10 +18,6 @@ const ItemDetail = ({data}) =>  {
     const [cantidad, setCantidad] = useState(0)
     const [showButton, setShowButton] = useState(false)
 
-    const addProductToCart = () => {
-        console.log("PRODUCTO A AGREGAR: ", data)
-        console.log("CANTIDAD:", cantidad)
-    }
   return (
     <div className="container" key={data.id}>
         <div className="card">
@@ -45,8 +41,8 @@ const ItemDetail = ({data}) =>  {
                              ${data.price}<small className="text-success">(36%off)</small>
                             </h2>
                             {isInCart(data.id) ? <button onClick={() => {deleteItem(data.id)}}> Modificar Compra </button> : <Counter cantidad={cantidad} stock={data.stock} setCantidad={setCantidad} onAdd={sendItemToCart}/>}
-                            <button><Link to="/product/cart">Ir al carrito</Link></button>
-                         
+                            <button ><Link to="/product/cart">Ir al carrito</Link></button>
+
                     </div>
                 </div>
             </div>
@@ -56,3 +52,12 @@ const ItemDetail = ({data}) =>  {
 }
 
 export default ItemDetail
+
+
+
+
+// {showButton ? (
+//     <Link to="/product/cart">Ir al carrito</Link>
+// ) : (
+//     <Counter initial={1} stock={data.stock} onAdd={onAdd}/>
+// )}

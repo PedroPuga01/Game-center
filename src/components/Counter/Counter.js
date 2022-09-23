@@ -35,14 +35,12 @@ const Counter = ({
         <p>{cantidad}</p>
         <button onClick={removeProduct}>-</button>
       </div>
-      <button
+      <button disabled={cantidad === 0}
         onClick={() => {
           onAdd(cantidad);
           addTotal();
         }}
-      >
-        {' '}
-        AGREGAR PRODUCTO{' '}
+      >AGREGAR PRODUCTO
       </button>
     </>
   );
