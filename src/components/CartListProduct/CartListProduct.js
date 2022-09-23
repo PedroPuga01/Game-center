@@ -7,11 +7,6 @@ const CartListProduct =  () => {
   const { totalCartPrice, totalProducts, cart, clearCart } = useContext(CartContext);
   return (
     <div>
-      { cart.cantidad !== 0 ? (
-        <p> hay un total de {totalProducts(cart)} productos en el carrito!</p>
-      ) : (
-        <p>Aun no hay productos en el carrito</p>
-      )}
       {cart.map((prod) =><Cart prod={prod}/>)}   
       <Link to="/">
         <div className="cart_buttons">
