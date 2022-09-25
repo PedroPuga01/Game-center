@@ -1,3 +1,4 @@
+//Hijo de CartListProduct, va a haber un CART por cada producto agregado al carrito.
 import React from 'react';
 import './cart.css';
 
@@ -54,7 +55,6 @@ const Cart = ({ deleteItem, prod}) => {
             </div>
           </div>
         </div>
-      
     </div>
   );
 };

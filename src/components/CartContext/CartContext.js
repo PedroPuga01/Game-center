@@ -1,5 +1,5 @@
 import React from 'react'
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState } from 'react'
 
 const CartContext = createContext()
 export const CartProvider = ({children}) => {
@@ -61,16 +61,3 @@ export const CartProvider = ({children}) => {
 }
 
 export default CartContext
-
-
- // const getTotalUnidades = (id) => {
-    //     const product = cart.find((prod) =>{
-    //         return product?.cantidad;
-    //     })
-    // }
-
-
-    // const getProductQuantity = (id) => {
-    //     const product = cart.find((prod) => prod.id === id);
-    //     return product?.cantidad
-    // }
