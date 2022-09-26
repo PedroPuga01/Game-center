@@ -1,8 +1,10 @@
 //Hijo de CartListProduct, va a haber un CART por cada producto agregado al carrito.
-import React from 'react';
+import React, {useContext} from 'react';
+import CartContext from '../CartContext/CartContext';
 import './cart.css';
 
-const Cart = ({ deleteItem, prod}) => {
+const Cart = ({prod}) => {
+  const { deleteItem } = useContext(CartContext)
   return (
     <div className="cart_section">
           <div className="container-fluid">

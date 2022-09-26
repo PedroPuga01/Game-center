@@ -10,12 +10,13 @@ import { db } from '../../firebaseConfig';
 
 const Form = ({ cart, total, clearCart, handleId }) => {
     const [nombre, setNombre] = useState('');
-    const [apellido, setApellido] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const order = {
-            buyer: { nombre: nombre, apellido: apellido },
+            buyer: { nombre: nombre, phone: phone, email: email },
             items: cart,
             total: total,
             date: serverTimestamp(),
@@ -31,7 +32,7 @@ const Form = ({ cart, total, clearCart, handleId }) => {
     };
 
     const updateprod = () => {
-        const orderDoc = doc(db, 'orders', 'A29yVRkpjasoaRfEo3G5');
+        const orderDoc = doc(db, 'orders', 'DvCjzFflk9zDGLGaIORToaRfEo3G5');
         updateDoc(orderDoc, { total: 100 });
     };
 
@@ -39,8 +40,12 @@ const Form = ({ cart, total, clearCart, handleId }) => {
         setNombre(event.target.value);
     };
 
-    const handleChangeApellido = (event) => {
-        setApellido(event.target.value);
+    const handleChangePhone = (event) => {
+        setPhone(event.target.value);
+    };
+
+    const handleChangeEmail = (event) => {
+        setEmail(event.target.value);
     };
 
     return (
@@ -55,10 +60,17 @@ const Form = ({ cart, total, clearCart, handleId }) => {
                 />
                 <input
                     type="text"
-                    placeholder="Apellido..."
-                    name="apellido"
-                    value={apellido}
-                    onChange={handleChangeApellido}
+                    placeholder="Phone..."
+                    name="phone"
+                    value={phone}
+                    onChange={handleChangePhone}
+                />
+                <input
+                    type="text"
+                    placeholder="Email..."
+                    name="email"
+                    value={email}
+                    onChange={handleChangeEmail}
                 />
                 <button>Enviar</button>
             </form>
