@@ -5,19 +5,26 @@ const CartContext = createContext()
 export const CartProvider = ({children}) => {
     const [cart, setCart] =useState([])
     
+  //   Este addToCart me rompe el cart
+  //   const addToCart = (item, cantidad) => {
+  //     if (isInCart(item.id)) {
+  //         setCart(
+  //           cart.map((prod) =>{
+  //             return prod.id === item.id
+  //             ? {...prod, cantidad: prod.cantidad + cantidad}
+  //             : prod;
+  //           })
+  //         )
+  //     } else {
+  //         setCart([...cart, { ...item, cantidad: cantidad }]);
+  //     }
+  // };
 
-    const addToCart = (item, cantidad) => {
-        if (isInCart(item.id)) {
-          setCart(
-            cart.map((prod) => {
-              return prod.id === item.id ? { ...prod, cantidad: prod.cantidad + cantidad } 
-                : prod;
-            })
-          );
-        } else { 
-          setCart([...cart, { ...item, cantidad: cantidad }])
-        }
-      };
+
+    const addToCart = (item) => {
+      setCart([...cart, item])
+  }
+  
     
     const isInCart = (id) => {
         return cart.some(prod => prod.id === id)

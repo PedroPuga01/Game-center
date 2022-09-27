@@ -23,7 +23,8 @@ const Cart = ({prod}) => {
                           <div className="cart_item_text">{prod.title}</div>
                         </div>
                         <div className="cart_item_color cart_info_col">
-                          <div className="cart_item_title">{prod.description}</div>
+                          <div className="cart_item_title">Descripcion</div>
+                          <div className="cart_item_text">{prod.description}</div>
                         </div>
                         <div className="cart_item_quantity cart_info_col">
                           <div className="cart_item_title">Cantidad</div>
