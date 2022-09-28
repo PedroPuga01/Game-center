@@ -16,7 +16,6 @@ const ItemDetail = ({data}) =>  {
     }
 
     const [cantidad, setCantidad] = useState(0)
-    const [showButton, setShowButton] = useState(false)
 
   return (
     <div className="container" key={data.id}>
@@ -53,11 +52,3 @@ const ItemDetail = ({data}) =>  {
 
 export default ItemDetail
 
-
-
-
-// {showButton ? (
-//     <Link to="/product/cart">Ir al carrito</Link>
-// ) : (
-//     <Counter initial={1} stock={data.stock} onAdd={onAdd}/>
-// )}

@@ -63,16 +63,4 @@ export const CartProvider = ({children}) => {
 export default CartContext
 
 
-  //   const addToCart = (item, cantidad) => {
-  //     if (isInCart(item.id)) {
-  //         setCart(
-  //           cart.map((prod) =>{
-  //             return prod.id === item.id
-  //             ? {...prod, cantidad: prod.cantidad + cantidad}
-  //             : prod;
-  //           })
-  //         )
-  //     } else {
-  //         setCart([...cart, { ...item, cantidad: cantidad }]);
-  //     }
-  // };
+ 

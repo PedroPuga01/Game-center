@@ -1,4 +1,3 @@
-// Padre del Cart, usa las funciones creadas en cartContext
 import React, { useContext, useState } from 'react';
 import Cart from '../Cart/Cart'
 import { Link } from 'react-router-dom';

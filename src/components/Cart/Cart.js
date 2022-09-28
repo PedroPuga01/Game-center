@@ -1,4 +1,3 @@
-//Hijo de CartListProduct, va a haber un CART por cada producto agregado al carrito.
 import React, {useContext} from 'react';
 import CartContext from '../CartContext/CartContext';
 import './cart.css';
