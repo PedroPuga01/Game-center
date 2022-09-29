@@ -21,6 +21,8 @@ El proyecto se trata de un ecommerce de consolas, videojuegos y periféricos. Ti
 
 - [React spinners] (https://www.npmjs.com/package/react-spinners)
 
+- [icons fontawesome] (https://fontawesome.com/icons)
+
 ## Pasos para levantar el proyecto localmente
 
 ```
